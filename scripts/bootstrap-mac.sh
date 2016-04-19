@@ -98,6 +98,13 @@ bootstrap_mac() {
         echo "Found git: $git"
     fi
 
+    gstat=`which gstat`
+    if [ $? -ne 0 ]; then
+        homebrew_formulas+=" coreutils:coreutils"
+    else
+        echo "Found gstat: $gstat"
+    fi
+
     gpg=`which gpg`
     if [ $? -ne 0 ]; then
         homebrew_formulas+=" gpg:gpg"
